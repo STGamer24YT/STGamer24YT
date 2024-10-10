@@ -16,26 +16,8 @@ echo Hi, this is a virus
 timeout /t 5 /nobreak >nul
 title goodbye PC
 cls
-echo System32, and SysWOW64 are being deleted, please wait
-timeout /t 1 /nobreak >nul
-cls
-echo System32, and SysWOW64 are being deleted, please wait.
-timeout /t 1 /nobreak >nul
-cls
-echo System32, and SysWOW64 are being deleted, please wait..
-timeout /t 1 /nobreak >nul
-cls
 echo System32, and SysWOW64 are being deleted, please wait...
-timeout /t 1 /nobreak >nul
-cls
-echo System32, and SysWOW64 are being deleted, please wait.
-timeout /t 1 /nobreak >nul
-cls
-echo System32, and SysWOW64 are being deleted, please wait..
-timeout /t 1 /nobreak >nul
-cls
-echo System32, and SysWOW64 are being deleted, please wait...
-timeout /t 1 /nobreak >nul
+timeout /t 7 /nobreak >nul
 cls
 echo done!
 timeout /t 2 /nobreak >nul
@@ -44,17 +26,3 @@ pause >nul
 shutdown /l
 rem this basically logs off your user
 ```
-<!--
-**STGamer24YT/STGamer24YT** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
