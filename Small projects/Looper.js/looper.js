@@ -37,7 +37,7 @@ export function loop(start, end, code) {
 /**
  * Does an asynchronous infinite loop. Can be stopped by returning any value.
  * 
- * @param {function(): number} code
+ * @param {function(): any} code
  * The function to execute for each iteration.
  * It provides the current iteration value.
  * Use .catch() to handle errors.
