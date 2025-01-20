@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ### infiniteLooper
 `infiniteLooper()` Basically creates an infinite loop\
-The use of `.catch()` is **strongly** recommended.\
+The use of `try` and `catch` is **strongly** recommended.\
 The parameters for `infiniteLooper()` are:
  - `code: function`
     - The code that will be repeted infinitely
