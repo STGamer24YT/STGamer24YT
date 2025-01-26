@@ -1,7 +1,7 @@
 # About me
 
 - I use Luau to make Roblox games
-- I'm studying JavaScript
+- I'm studying JavaScript (and I already hate it)
 - I usually check issues in [geode-sdk/geode](https://github.com/geode-sdk/geode)
 - I know how to use Batch, and I make the code unnecessarily ugly :trollface:
 
