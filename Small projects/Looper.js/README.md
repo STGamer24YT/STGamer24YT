@@ -23,11 +23,30 @@ import * as looper from "./looper.js";
 document.addEventListener("DOMContentLoaded", () => {
   looper.loop(20, (bee) => { // This executes "console.log("Buzz!")" 20 times
       console.log("Buzz!");
-      if (bee == 20) {
-          console.log("Buzz! Buzz! Buzz!");
-      }
+        if (bee === 20) {
+            let rand = Math.floor(Math.random() * 5) + 1;
+            switch (rand) {
+                case 1:
+                    document.write("Buzz 🐝")
+                    break;
+                case 2:
+                    document.write("Buzz? 🐝")
+                    break;
+                case 3:
+                    document.write("Buzz!! 🐝")
+                    break;
+                case 4:
+                    document.write("Buzz... 🐝")
+                    break;
+                case 5:
+                    document.write("Buzz Buzz Buzz 🐝")
+                    break;
+                default:
+                    document.write("🐝")
+            }
+        }
   })
-}) // I totally didn't copy this from the loop.js example
+})
 ```
 
 ### infiniteLooper
@@ -54,8 +73,8 @@ The parameters for `infiniteLooper()` are:
 // :trollface:
 ```
 
-### infiniteLoopAsync
-`infiniteLoopAsync()` basically creates an infinite loop, and it executes asynchronously.\
+### infiniteLooperAsync
+`infiniteLooperAsync()` basically creates an infinite loop, and it executes asynchronously.\
 The use of `.catch()` is **strongly** recommended.\
 The parameters for `infiniteLoopAsync()` are:
  - `code: function`
@@ -72,7 +91,7 @@ The parameters for `infiniteLoopAsync()` are:
 import * as looper from "./looper.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    looper.infiniteLoopAsync((iteration) => {
+    looper.infiniteLooperAsync((iteration) => {
         // This executes this code until rand is not a number from 1 to 7
         let rand = Math.floor(Math.random() * 8) + 1;
         switch (rand) {
@@ -101,13 +120,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Buzz... 😵");
                 return 0; // Return a value to break the loop
         }
-        if ((iteration >= 10) && (iteration % 10 == 0)) {
+        if ((iteration >= 10) && (iteration % 10 === 0)) {
             console.log("Buzz! Buzz! Buzz! :D");
+        }
+        if (iteration === 111) {
+            throw new Error(":trollface:")
         }
     }, 1).catch(error => {
         console.error("Program stopped because of an error.\nThe error in question: " + error);
     });
     console.log("Bees forever!");
-}) // I TOTALLY DIDN'T COPY THIS CODE FROM THE infLoopAsync.js EXAMPLE!!!
+})
 ```
 

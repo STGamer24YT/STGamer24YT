@@ -1,33 +1,33 @@
 // Description: This file is used to test the infinite loop function from range.js file.
-import * as looper from "./looper.js";
+import * as looper from "../looper.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    looper.infiniteLoopAsync((iteration) => {
+    looper.infiniteLooperAsync((iteration) => {
         let rand = Math.floor(Math.random() * 8) + 1;
         switch (rand) {
             case 1:
-                console.log("Buzz!");
+                document.write("Buzz!");
                 break;
             case 2:
-                console.log("Buzz?");
+                document.write("Buzz?");
                 break;
             case 3:
-                console.log("Buzz Buzz!");
+                document.write("Buzz Buzz!");
                 break;
             case 4:
-                console.log("Buzz, Buzz!!");
+                document.write("Buzz, Buzz!!");
                 break;
             case 5:
-                console.log("Buzz? Buzz!");
+                document.write("Buzz? Buzz!");
                 break;
             case 6:
-                console.log("Buzz!? BUZZ!?");
+                document.write("Buzz!? BUZZ!?");
                 break;
             case 7:
-                console.log("Buzz...");
+                document.write("Buzz...");
                 break;
             default:
-                console.log("Buzz... 😵");
+                document.write("Buzz... 😵");
                 return 0;
         }
         if ((iteration >= 10) && (iteration % 10 == 0)) {

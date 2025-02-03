@@ -69,11 +69,11 @@ export function infiniteLooper(code, delayBetweenCalls = 1, extraCode, applyDela
             break;
         }
         if (extraCode) {
-            if (applyDelayBetweenFunctions) {await wait(delayBetweenCalls)}
+            if (applyDelayBetweenFunctions) {wait(delayBetweenCalls)}
             extraCode(loops);
         }
         loops++;
-        await wait(delayBetweenCalls);
+        wait(delayBetweenCalls);
     }
 }
 
@@ -93,7 +93,7 @@ export function infiniteLooper(code, delayBetweenCalls = 1, extraCode, applyDela
  * 
  * Please note that this function doesn't support passing multiple fuctions as parameters.
  */
-export async function infiniteLoopAsync(code, delayBetweenCalls = 1) {
+export async function infiniteLooperAsync(code, delayBetweenCalls = 1) {
     if (typeof code != "function") {
         throw new TypeError("The code must be a function.");
     }
