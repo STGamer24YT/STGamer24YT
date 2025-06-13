@@ -1,9 +1,11 @@
 # About me
 
 - I use Luau to make Roblox games
-- I'm studying JavaScript (and I already hate it)
+- I'm studying CSS, JavaScript, and Svelte
 - I usually check issues in [geode-sdk/geode](https://github.com/geode-sdk/geode)
-- I know how to use Batch, and I make the code unnecessarily ugly :trollface:
+- I know how to create batch files, and I make their source code unnecessarily ugly :trollface:
+
+## Cool things I made
 
 ### Module for playing sound in Roblox
 
@@ -84,3 +86,5 @@ end
 return func
 ```
 </details>
+
+<!-- TODO: Add things here -->
