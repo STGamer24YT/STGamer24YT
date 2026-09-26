@@ -1,90 +1,32 @@
 # About me
 
-- I use Luau to make Roblox games
-- I'm studying CSS, JavaScript, and Svelte
-- I usually check issues in [geode-sdk/geode](https://github.com/geode-sdk/geode)
-- I know how to create batch files, and I make their source code unnecessarily ugly :trollface:
+- I <!-- so descriptive i know -->
+- I'm studying JavaScript, Lua 5.1, and Svelte
+- I know how to create batch files, and I like making their source code unnecessarily ugly :trollface:
 
-## Cool things I made
+## Almost cool thing I made
 
-### Module for playing sound in Roblox
+This batch file creates a .osk file from a folder. Well really this just makes a zip file with a different extension; I just wanted to make this because I'm making an osu skin and i have to compress the folder every time I make a change.
 
-<details><summary>PlaySound.lua</summary>
+<details><summary>produce.bat</summary>
 
-``` Luau
--- // important // --
-local tweenservice = game:GetService("TweenService")
-local audio = nil
+```Batch
+@echo off
+set folder=%~f1
 
--- // get the player that is calling the functions //
-local plr = game:GetService("Players").LocalPlayer
-
--- // this music is stored in ReplicatedStorage //
-local MainMusic = game:GetService("ReplicatedStorage").sound.Main:GetChildren()
-local GameMusic = game:GetService("ReplicatedStorage").sound.Game:GetChildren()
-
--- // code to fade in and out audio //
-local inTweenInfo = TweenInfo.new(
-	1, Enum.EasingStyle.Sine, Enum.EasingDirection.In
-)
-local outTweenInfo = TweenInfo.new(
-	0.7, Enum.EasingStyle.Sine, Enum.EasingDirection.Out
+if not exist "%folder%" (
+echo Please open me with a folder!
+REM actually it works with files too but whatever
+pause
+exit
 )
 
-local iTween = tweenservice:Create(audio, inTweenInfo, {Volume = 0.5})
-local oTween = tweenservice:Create(audio, inTweenInfo, {Volume = 0})
+set parent=%~p1
 
--- // function used by play() //
-local fadeAudio = function(scope)
-	if scope == "in" then
-		iTween:Play()
-		return
-	elseif scope == "out" then
-		oTween:Play()
-		task.wait(0.7)
-		return
-	else
-		print("oops :trollface:")
-		return
-	end
-end
+IF %parent:~-1%==\ SET parent=%parent:~0,-1%
+REM i copied this... im guilty...
 
--- // module // --
-local func = {}
-
-func.MainMusic = MainMusic
-func.GameMusic = GameMusic
-
--- // play audio //
-func.play = function(scope)
-	if audio ~= nil then -- if audio exists, destroy it
-		fadeAudio("out")
-		audio:Destroy()
-		print("stopped!")
-	end
-	
-	local selectedmusic = {}
-	
-	if scope == func.MainMusic then 
-		selectedmusic = MainMusic
-	elseif scope == func.GameMusic then
-		selectedmusic = GameMusic
-	else
-		return "Error! Invalid Scope !{ module.game or module.map }!"
-	end
-	
-	local rnd = math.random(1, #selectedmusic)
-	task.wait(.1)
-	
-	audio = selectedmusic[rnd]:Clone()
-	audio.Parent = plr:FindFirstChild("SoundPlace")
-	audio:Play()
-	fadeAudio("in")
-	print("played!")
-end
-
-return func
+set name=%~n1
+tar --format zip -C "%parent%" -cavf "%name%.osk" "%name%"
 ```
 </details>
-
-<!-- TODO: Add things here -->
